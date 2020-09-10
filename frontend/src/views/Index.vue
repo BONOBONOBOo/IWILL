@@ -1,7 +1,5 @@
 <template>
   <div class="wrapper">
-
-    <!-- 배경 및 안내 문구 -->
     <parallax class="page-header header-filter" :style="headerStyle">
       <div class="md-layout">
         <div class="md-layout-item">
@@ -18,73 +16,21 @@
         </div>
       </div>
     </parallax>
-
-    <!-- 실질적인 메인 메이지 헤더 -->
-    <div class="main main-raised">
-      <div class="headerblank"></div>
-      <div class="header">
-        <div class="header-left"></div>
-        <div>
-          <md-button class="md-button" @click="toggle('MyRecord')">
-            <md-icon>favorite</md-icon> 글 남기기
-          </md-button>
-          <md-button class="md-button" @click="toggle('WriteWill')">
-            <md-icon>favorite</md-icon> 나의 글
-          </md-button>
-        </div>
-      </div>
-
-      <!-- content 시작 -->
-      <div class="content">
-        <div class="content-left">
-          <div class="mainImg">
-            <img
-              src="../assets/img/faces/card-profile1-square.jpg"
-              alt="Circle Image"
-              class="rounded-circle"
-              :class="{ 'responsive-image': responsive }"
-            />
-          </div>
-          <div class="underImg">
-            <h4>내 아이디</h4>
-            <md-button class="md-block" href="/profile"><span style="font-size: 1.3em; height: 1em;">프로필 페이지</span></md-button>
-          </div>
-        </div>
-        
-        <div class="content-right">
-          <div class="menu">
-            <div v-if="categories[1].display">
-              <MyRecord/>
-            </div>
-            <div v-if="categories[0].display">
-              <WriteWill/>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-      <div></div>
-      <div class="section section-basic" >
+    <div class="main main-raised" style="background-color: ivory">
+      <div class="section section-basic">
         <div class="container">
-          <div class="title" >
-            <h2 >Basic Elements</h2>
+          <div class="title">
+            <h2>Basic Elements</h2>
           </div>
           <basic-elements></basic-elements>
         </div>
       </div>
-      
-      
       <div class="section section-navbars">
         <div class="container">
           <small-navigation></small-navigation>
         </div>
         <navigation></navigation>
       </div>
-
       <div class="section section-tabs">
         <div class="container">
           <tabs></tabs>
@@ -113,9 +59,7 @@
           <javascript-components></javascript-components>
         </div>
       </div>
-
-
-      <!-- <div class="section">
+      <div class="section">
         <div class="container text-center">
           <div class="md-layout">
             <div
@@ -317,7 +261,7 @@
             >
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -331,11 +275,7 @@ import NavPills from "./components/NavPillsSection";
 import Notifications from "./components/NotificationsSection";
 import TypographyImages from "./components/TypographyImagesSection";
 import JavascriptComponents from "./components/JavascriptComponentsSection";
-// import { LoginCard } from "@/components";
-import "../assets/scss/custom.scss"
-
-import MyRecord from "../components/MainPage/MyRecord"
-import WriteWill from "../components/MainPage/WriteWill"
+import { LoginCard } from "@/components";
 
 export default {
   components: {
@@ -347,9 +287,7 @@ export default {
     Notifications,
     TypographyImages,
     JavascriptComponents,
-    // LoginCard,
-    MyRecord,
-    WriteWill,
+    LoginCard
   },
   name: "index",
   bodyClass: "index-page",
@@ -392,11 +330,7 @@ export default {
       firstname: null,
       email: null,
       password: null,
-      leafShow: false,
-      categories: [
-        {display: true, name: 'MyRecord'},
-        {display: false, name: 'WriteWill'},
-      ]
+      leafShow: false
     };
   },
   methods: {
@@ -405,15 +339,6 @@ export default {
         this.leafShow = false;
       } else {
         this.leafShow = true;
-      }
-    },
-    toggle(text) {
-      for(var i = 0; i < this.categories.length; i++) {
-        if(text == this.categories[i].name) {
-          this.categories[i].display = true
-        } else {
-          this.categories[i].display = false
-        }
       }
     }
   },

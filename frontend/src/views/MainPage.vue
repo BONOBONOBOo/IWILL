@@ -19,7 +19,7 @@
       </div>
     </parallax>
 
-    <!-- 실질적인 메인 메이지 헤더 -->
+    <!-- 메인 페이지 헤더 -->
     <div class="main main-raised">
       <div class="headerblank"></div>
       <div class="header">

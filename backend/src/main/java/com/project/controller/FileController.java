@@ -7,11 +7,14 @@ import java.io.InputStream;
 import javax.validation.Valid;
 
 import com.project.dto.Will;
+import com.project.service.FileService;
 
 import org.apache.commons.io.FileUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,7 +38,9 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 public class FileController {
-    
+   
+    @Autowired 
+    FileService fileservice;
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public String upload(@RequestParam("file") final MultipartFile multipartFile) {
@@ -51,6 +56,12 @@ public class FileController {
 		return "redirect:/form";
 	}
 
+    @GetMapping(value = "/all")
+    public Object checkHash(@RequestParam("path") String path) throws Exception {
+        path = "C:\\A503_UCC.mp4";
+        String hash= fileservice.checkHash(path);
+        return new ResponseEntity<String>(hash, HttpStatus.OK);
+    }
 
 
     // public ResponseEntity<Object> register(@Valid @RequestBody Will will){

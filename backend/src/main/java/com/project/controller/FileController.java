@@ -55,7 +55,7 @@ public class FileController {
 		return "redirect:/form";
 	}
 
-    @GetMapping(value = "/all")
+    @GetMapping(value = "/checkhash")
     public Object checkHash(@RequestParam("path") String path) throws Exception {
         path = "C:\\A503_UCC.mp4";
         String hash= fileservice.checkHash(path);

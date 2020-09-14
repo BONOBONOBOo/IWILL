@@ -41,7 +41,7 @@
           </div>
           <div class="description text-center">
             <p>
-              한 줄 소개
+              한 줄 소개 자리
             </p>
           </div>
           <div class="profile-tabs">

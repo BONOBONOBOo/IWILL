@@ -46,7 +46,7 @@
           </div>
           <div class="profile-tabs">
             <tabs
-              :tab-name="['비밀번호 변경', 'Work', 'Favorite']"
+              :tab-name="['비밀번호 변경', '정보 변경', '지갑 확인']"
               :tab-icon="['camera', 'palette', 'favorite']"
               plain
               nav-pills-icons

@@ -40,3 +40,53 @@ public class EthServiceTest {
         Thread.sleep(5000);
     }
 }
+
+
+/*
+
+
+geth --networkid 45 --nodiscover --maxpeers 0 --datadir C:\ssafy\project2\geth --mine --minerthreads 1 --allow-insecure-unlock --rpc --rpcaddr "0.0.0.0" --rpcport 8545 --rpccorsdomain "*" --rpcapi "admin, db, eth, debug, miner, net, shh, txpool, personal, web3" 2>>  C:\ssafy\project2\geth/geth.log &
+
+geth attach rpc:http://localhost:8545
+
+web3.fromWei(eth.getBalance(eth.accounts[0]), "ether")
+
+
+//unlock
+{
+    "jsonrpc":"2.0",
+    "method":"personal_unlockAccount",
+    "params": [
+        "0x34ee5e2e9842d03c4000e9b2c70f398b04a69004",
+        "123qwe",
+        0
+        ],   
+    "id":100
+}
+
+
+
+
+//send Tansaction with data
+
+{
+    "jsonrpc":"2.0",
+    "method":"eth_sendTransaction",
+    "params": [{
+      "data": "0x2c2c2c2c2c2c2c2c2c2c2c2c",
+      "from": "0x34ee5e2e9842d03c4000e9b2c70f398b04a69004",
+      "to": "0x34ee5e2e9842d03c4000e9b2c70f398b04a69004",
+      "value": "0x821ab0d4414980000"
+    }],   
+    "id":100
+}
+
+//result
+{
+    "jsonrpc": "2.0",
+    "id": 100,
+    "result": "0xc8e1b783a657792dec80c1822da6cd4eb1a6c2f797b173d63f9359b423201d1d"
+}
+
+
+*/

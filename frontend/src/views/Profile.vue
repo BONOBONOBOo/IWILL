@@ -46,8 +46,8 @@
           </div>
           <div class="profile-tabs">
             <tabs
-              :tab-name="['비밀번호 변경', '정보 변경', '지갑 확인']"
-              :tab-icon="['camera', 'palette', 'favorite']"
+              :tab-name="['비밀번호 변경', '정보 변경', '지갑 키 확인']"
+              :tab-icon="['key', 'palette', 'wallet']"
               plain
               nav-pills-icons
               color-button="success"
